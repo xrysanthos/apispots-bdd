@@ -1,0 +1,39 @@
+{
+  "name": "apispots-testing-bdd",
+  "version": "0.0.1",
+  "main": "",
+  "scripts": {
+    "test": "./node_modules/cucumber/bin/cucumber.js --require lib/cucumber test/features --format progress --tags @dev"
+  },
+  "dependencies": {
+  	"cucumber": "latest",
+  	"unirest": "latest",
+  	"swagger-parser": "latest",
+  	"async": "latest",
+  	"chai": "latest",
+  	"lodash.clonedeep": "^2.4.1",
+    "request": "*"
+  },
+  "devDependencies": {
+        
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "description": "Adds a BDD layer to API automated testing.",
+
+  "contributors": [
+    {
+      "name": "Chris Spiliotopoulos",
+      "email": "chrysanthos.spiliotopoulos@gmail.com"
+    }
+  ],
+  
+  "directories": {
+    "lib": "./lib"
+  },
+  
+  "main": "index.js"
+
+}
