@@ -1,39 +1,40 @@
 {
   "name": "apispots-testing-bdd",
   "version": "0.0.1",
-  "main": "",
+  "main": "index.js",
   "scripts": {
-    "test": "./node_modules/cucumber/bin/cucumber.js --require lib/cucumber test/features --format progress --tags @dev"
+    "test": "./node_modules/cucumber/bin/cucumber.js --require lib/cucumber --format progress test/features/petstore.users.feature"
   },
   "dependencies": {
-  	"cucumber": "latest",
-  	"unirest": "latest",
-  	"swagger-parser": "latest",
-  	"async": "latest",
-  	"chai": "latest",
-  	"lodash.clonedeep": "^2.4.1",
-    "request": "*"
+    "async": "latest",
+    "chai": "latest",
+    "cucumber": "latest",
+    "good": "^6.1.2",
+    "good-console": "^5.0.0",
+    "hapi": "^8.4.0",
+    "hapi-swaggered": "^2.1.0",
+    "hapi-swaggered-ui": "^1.3.1",
+    "joi": "^6.4.1",
+    "lodash.clonedeep": "^2.4.1",
+    "nconf": "latest",
+    "request": "*",
+    "swagger-parser": "latest",
+    "unirest": "latest",
+    "winston": "latest"
   },
-  "devDependencies": {
-        
-  },
+  "devDependencies": {},
   "repository": {
     "type": "",
     "url": ""
   },
   "description": "Adds a BDD layer to API automated testing.",
-
   "contributors": [
     {
       "name": "Chris Spiliotopoulos",
       "email": "chrysanthos.spiliotopoulos@gmail.com"
     }
   ],
-  
   "directories": {
     "lib": "./lib"
-  },
-  
-  "main": "index.js"
-
+  }
 }
