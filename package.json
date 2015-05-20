@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/cucumber/bin/cucumber.js --require lib/cucumber --format progress test/features/petstore.users.feature"
+    "test": "./node_modules/cucumber/bin/cucumber.js --require lib/cucumber --format pretty test/features"
   },
   "dependencies": {
     "async": "latest",

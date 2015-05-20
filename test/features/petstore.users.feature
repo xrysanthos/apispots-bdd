@@ -1,8 +1,8 @@
-Feature: Swagger Petstore - Users
+Feature: Swagger Petstore - Pets
   
   As a client of the Petstore API
   I want to run tests
-  In order to validate the Users API
+  In order to validate the Pets operations
 
   Background: 
     Given a "Swagger" API definition at "http://petstore.swagger.io/v2/swagger.json"
@@ -64,17 +64,17 @@ Feature: Swagger Petstore - Users
     When the request is executed
     Then response status is "ok"
     And response body has attributes
-      | attribute | value          |
-      | firstName | chrysanthos    |
-      | lastName  | spiliotopoulos |
-      | phone     | 99999          |
+      | attribute | value            |
+      | firstName | 'chrysanthos'    |
+      | lastName  | 'spiliotopoulos' |
+      | phone     | "99999"          |
 
   Scenario: Login the user
     Given an operation with Id "loginUser"
     And request query params
-      | param    | value   |
-      | username | thechef |
-      | password | thepass |
+      | param    | value     |
+      | username | 'thechef' |
+      | password | 'thepass' |
     When the request is executed
     Then response status is "ok"
 
