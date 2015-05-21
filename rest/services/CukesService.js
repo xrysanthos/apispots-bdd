@@ -23,7 +23,7 @@ module.exports = function() {
 			
 			var appDir = path.dirname(require.main.filename);
 	
-			var args = [ '', '', '--require', '../lib/cucumber', '--format',
+			var args = [ '', '', '--require', appDir + '/../lib/cucumber', '--format',
 				   					'pretty', file ];
 
 			/*
