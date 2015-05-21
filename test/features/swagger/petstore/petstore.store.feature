@@ -47,4 +47,4 @@ Feature: Swagger Petstore - Store
     Given an operation with Id "getOrderById"
     And request path param "orderId" equals "1234"
     When the request is executed
-    Then response code is "500"
+    Then response code is "404"

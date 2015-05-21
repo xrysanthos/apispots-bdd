@@ -85,5 +85,5 @@ Feature: Swagger Petstore - Users
     Given an operation with Id "getPetById"
     And request path param "petId" equals "1234"
     When the request is executed
-    Then response status is "serverError"
+    Then response code is "404"
     
