@@ -13,7 +13,6 @@ var hapiSwaggeredUi = require('hapi-swaggered-ui');
 var server = new Hapi.Server();
 
 server.connection({
-	host : 'localhost',
 	port : 3000,
 	labels : [ 'api' ],
 	app: {
