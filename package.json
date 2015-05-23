@@ -29,7 +29,7 @@
    "main":"./server/server.js",
    "scripts":{  
       "start":"node ./rest/server.js",
-      "test":"./node_modules/cucumber/bin/cucumber.js --require lib/cucumber --format pretty test/features"
+      "test":"./node_modules/cucumber/bin/cucumber.js --require lib/cucumber --format pretty test/features --tags @dev"
    },
    "dependencies":{  
       "async":"latest",
@@ -46,7 +46,8 @@
       "request":"*",
       "swagger-parser":"latest",
       "unirest":"latest",
-      "winston":"latest"
+      "winston":"latest",
+      "xml2js": "latest"
    },
    "devDependencies":{  
 
