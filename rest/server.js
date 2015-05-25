@@ -18,8 +18,18 @@ server.connection({
 	app: {
     swagger: {
       info: {
-        title: 'API Spots - BDD Testing API',
-        description: 'Test your APIs using BDD'
+        title: 'API Spots - BDD API Testing',
+        description: 'Test your APIs using BDD',
+        version: '0.0.1',
+        contact: {
+        	name: 'Chris Spiliotopoulos (@chefArchitect)',
+        	url: 'https://github.com/chefArchitect',
+        	email: 'chrysanthos.spiliotopoulos@gmail.com'
+        },
+        license: {
+        	name: 'MIT',
+        	url: 'http://opensource.org/licenses/MIT'
+        }
       }
     }
   }
@@ -78,12 +88,7 @@ server.register({
 server.register({
 	register : hapiSwaggeredUi,
 	options : {
-		title : 'Example API',
-		authorization : {
-			field : 'apiKey',
-			scope : 'query' // header works as well
-		// valuePrefix: 'bearer '// prefix incase
-		}
+		title : 'API Spots - BDD API Testing'
 	}
 }, {
 	select : 'api',
