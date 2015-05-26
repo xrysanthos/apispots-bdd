@@ -1,4 +1,3 @@
-@dev
 Feature: 7digital API - Catalogue
   
   As a client of the 7digital API
