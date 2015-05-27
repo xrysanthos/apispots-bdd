@@ -14,7 +14,6 @@ Feature: OpenWeatherMap API - Current weather data
     When the request is executed
     Then response status is "ok"
 	
-  @dev	
   Scenario: Get current weather data for one location and by geographic coordinates
     Given endpoint "/weather" and method "get"
     And request query params
