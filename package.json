@@ -29,7 +29,7 @@
    "main":"./server/server.js",
    "scripts":{  
       "start":"node ./rest/server.js",
-      "test":"./node_modules/cucumber/bin/cucumber.js --require lib/cucumber --format pretty test/features --tags @dev"
+      "test":"./node_modules/cucumber/bin/cucumber.js --require lib/cucumber --format pretty --tags=@dev test/features/rest/7digital/7digital.catalogue.feature test/features/rest/OpenWeatherMap/openweathermap.current.feature"
    },
    "dependencies":{  
       "async":"latest",

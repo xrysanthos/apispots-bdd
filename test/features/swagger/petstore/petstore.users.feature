@@ -2,7 +2,7 @@ Feature: Swagger Petstore - Pets
   
   As a client of the Petstore API
   I want to run tests
-  In order to validate the Pets operations
+  In order to validate User related operations
 
   Background: 
     Given a "Swagger" API definition at "http://petstore.swagger.io/v2/swagger.json"
@@ -29,18 +29,18 @@ Feature: Swagger Petstore - Pets
     When the request is executed
     Then response status is "ok"
 
+  Scenario: Getting the user by username - bad username
+    Given an operation with Id "getUserByName"
+    And request path param "username" equals "koukouroukou123213121dsqsaddads"
+    When the request is executed
+    Then response status is "notFound"
+
   Scenario: Getting the user by username - timed out
     Given the endpoint "/user/{username}" and method "get"
     And request path param "username" equals "thechef"
     And request timeout is "100"
     When the request is executed
     Then response has time out error
-
-  Scenario: Getting the user by username - bad username
-    Given an operation with Id "getUserByName"
-    And request path param "username" equals "koukouroukou"
-    When the request is executed
-    Then response status is "notFound"
 
   Scenario: Update the user
     Given an operation with Id "updateUser"

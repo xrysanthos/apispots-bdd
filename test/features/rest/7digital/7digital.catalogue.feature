@@ -8,6 +8,7 @@ Feature: 7digital API - Catalogue
     Given a "REST" API definition at "http://api.7digital.com/1.2"
     And security query param "oauth_consumer_key" equals "7d9wh7e3jzaf"
 
+  @dev	
   Scenario: Browse artists
     Given endpoint "/artist/browse" and method "get"
     And request query param "letter" equals "a"
