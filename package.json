@@ -1,6 +1,6 @@
 {  
    "name":"apispots-testing-bdd",
-   "version":"0.0.1",
+   "version":"0.0.2",
    "description":"Adds a BDD layer to API automated testing.",
    "author": "Chris Spiliotopoulos (@chefArchitect)",
    "contributors":[  
@@ -47,7 +47,8 @@
       "swagger-parser":"latest",
       "unirest":"latest",
       "winston":"latest",
-      "xml2js": "latest"
+      "xml2js": "latest",
+      "strings.js": "latest"
    },
    "devDependencies":{  
 
