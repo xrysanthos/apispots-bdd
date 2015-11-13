@@ -1,22 +1,22 @@
-{  
+{
    "name":"apispots-testing-bdd",
    "version":"0.0.2",
    "description":"Adds a BDD layer to API automated testing.",
    "author": "Chris Spiliotopoulos (@chefArchitect)",
-   "contributors":[  
-      {  
+   "contributors":[
+      {
          "name":"Chris Spiliotopoulos",
          "email":"chrysanthos.spiliotopoulos@gmail.com"
       }
    ],
-   "repository":{  
+   "repository":{
       "type":"git",
       "url":"https://github.com/chefArchitect/apispots-testing-bdd"
    },
-   "bugs":{  
+   "bugs":{
       "url":"https://github.com/chefArchitect/apispots-testing-bdd/issues"
    },
-   "keywords":[  
+   "keywords":[
       "APIs",
       "api",
       "testing",
@@ -27,11 +27,11 @@
    "analyze":true,
    "license":"MIT",
    "main":"./server/server.js",
-   "scripts":{  
+   "scripts":{
       "start":"node ./rest/server.js",
       "test":"./node_modules/cucumber/bin/cucumber.js --require lib/cucumber --format pretty  test/features"
    },
-   "dependencies":{  
+   "dependencies":{
       "async":"latest",
       "chai":"latest",
       "cucumber":"latest",
@@ -48,16 +48,17 @@
       "unirest":"latest",
       "winston":"latest",
       "xml2js": "latest",
-      "strings.js": "latest"
+      "strings.js": "latest",
+      "strformat": "latest"
    },
-   "devDependencies":{  
+   "devDependencies":{
 
    },
-   "repository":{  
+   "repository":{
       "type":"",
       "url":""
    },
-   "directories":{  
+   "directories":{
       "lib":"./lib"
    }
 }
