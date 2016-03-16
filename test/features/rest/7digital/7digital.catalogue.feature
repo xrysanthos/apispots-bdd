@@ -11,7 +11,7 @@ Feature: 7digital API - Catalogue
   Scenario: Browse artists
     Given endpoint "/artist/browse" and method "get"
     And request query param "letter" equals "a"
-    And request type "application/json"
+    And request header "Accept" equals "application/json"
     When the request is executed
     Then response status is "ok"
     And response body has attributes
@@ -23,7 +23,7 @@ Feature: 7digital API - Catalogue
     Given endpoint "/artist/chart" and method "get"
     And request query param "period" equals "week"
     And request query param "toDate" equals "20150101"
-    And request type "application/json"
+    And request header "Accept" equals "application/json"
     When the request is executed
     Then response status is "ok"
     And response body has attributes
@@ -33,7 +33,7 @@ Feature: 7digital API - Catalogue
   Scenario: Artist details
     Given endpoint "/artist/details" and method "get"
     And request query param "artistId" equals "1"
-    And request type "application/json"
+    And request header "Accept" equals "application/json"
     When the request is executed
     Then response status is "ok"
     And response body has attributes
@@ -43,7 +43,7 @@ Feature: 7digital API - Catalogue
   Scenario: Artist releases
     Given endpoint "/artist/releases" and method "get"
     And request query param "artistId" equals "1"
-    And request type "application/json"
+    And request header "Accept" equals "application/json"
     When the request is executed
     Then response status is "ok"
     And response body has attributes
