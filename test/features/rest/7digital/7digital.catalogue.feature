@@ -1,10 +1,10 @@
 Feature: 7digital API - Catalogue
-  
+
   As a client of the 7digital API
   I want to run tests
   In order to validate the Catalogue API operations
 
-  Background: 
+  Background:
     Given a "REST" API definition at "http://api.7digital.com/1.2"
     And security query param "oauth_consumer_key" equals "7d9wh7e3jzaf"
 
@@ -48,4 +48,4 @@ Feature: 7digital API - Catalogue
     Then response status is "ok"
     And response body has attributes
       | attribute                  | value               |
-      | releases.releases[0].title | 'The Best Of Keane' |
+      | releases.releases[0].title | 'AOL Session' |
