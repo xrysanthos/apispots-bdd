@@ -1,10 +1,9 @@
 Feature: Swagger Petstore - Users
-  
   As a client of the Petstore API
   I want to run tests
   In order to validate the Pets operations
 
-  Background: 
+  Background:
     Given a "Swagger" API definition at "http://petstore.swagger.io/v2/swagger.json"
 
   Scenario: Add a new pet to the store
@@ -44,28 +43,9 @@ Feature: Swagger Petstore - Users
     When the request is executed
     Then response status is "ok"
     And response body has attributes
-      | attribute | value  |
-      | name      | woofie |
+      | attribute | value |
+      | name | woofie |
 
-  Scenario: Find pet by Id
-    Given an operation with Id "getPetById"
-    And request path param "petId" equals "1234"
-    When the request is executed
-    Then response status is "ok"
-    And response body has attributes
-      | attribute | value  |
-      | name      | woofie |
-
-  Scenario: Update a pet in the store with form data
-    Given an operation with Id "updatePetWithForm"
-    And request type "application/x-www-form-urlencoded"
-    And request path param "petId" equals "1234"
-    And request form params
-      | param  | value   |
-      | name   | max     |
-    When a request is executed
-    Then response status is "ok"
-    
   Scenario: Find pet by Id
     Given an operation with Id "getPetById"
     And request path param "petId" equals "1234"
@@ -73,17 +53,35 @@ Feature: Swagger Petstore - Users
     Then response status is "ok"
     And response body has attributes
       | attribute | value |
-      | name      | max   |
+      | name | woofie |
+
+  Scenario: Update a pet in the store with form data
+    Given an operation with Id "updatePetWithForm"
+    And request type "application/x-www-form-urlencoded"
+    And request path param "petId" equals "1234"
+    And request form params
+      | param | value |
+      | name | max |
+    When a request is executed
+    Then response status is "ok"
+
+  Scenario: Find pet by Id
+    Given an operation with Id "getPetById"
+    And request path param "petId" equals "1234"
+    When the request is executed
+    Then response status is "ok"
+    And response body has attributes
+      | attribute | value |
+      | name | max |
 
   Scenario: Delete a pet
     Given an operation with Id "deletePet"
     And request path param "petId" equals "1234"
     When the request is executed
     Then response status is "ok"
-         
+
   Scenario: Check pet is deleted
     Given an operation with Id "getPetById"
     And request path param "petId" equals "1234"
     When the request is executed
     Then response code is "404"
-    

@@ -1,10 +1,9 @@
 Feature: Swagger Petstore - Pets
-  
   As a client of the Petstore API
   I want to run tests
   In order to validate User related operations
 
-  Background: 
+  Background:
     Given a "Swagger" API definition at "http://petstore.swagger.io/v2/swagger.json"
 
   Scenario: Create a new user
@@ -51,7 +50,7 @@ Feature: Swagger Petstore - Pets
       "username": "thechef",
       "firstName": "chrysanthos",
       "lastName": "spiliotopoulos",
-      "phone": "99999"
+      "phone": "123456"
       }
       """
     And request type "application/json"
@@ -64,15 +63,15 @@ Feature: Swagger Petstore - Pets
     When the request is executed
     Then response status is "ok"
     And response body has attributes
-      | attribute | value            |
-      | firstName | 'chrysanthos'    |
-      | lastName  | 'spiliotopoulos' |
-      | phone     | "99999"          |
+      | attribute | value |
+      | firstName | 'chrysanthos' |
+      | lastName | 'spiliotopoulos' |
+      | phone | "123456" |
 
   Scenario: Login the user
     Given an operation with Id "loginUser"
     And request query params
-      | param    | value     |
+      | param | value |
       | username | 'thechef' |
       | password | 'thepass' |
     When the request is executed
