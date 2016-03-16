@@ -35,12 +35,13 @@
       "async":"latest",
       "chai":"latest",
       "cucumber":"latest",
-      "good":"^6.1.2",
-      "good-console":"^5.0.0",
-      "hapi":"^8.4.0",
-      "hapi-swaggered":"^2.1.0",
-      "hapi-swaggered-ui":"^1.3.1",
-      "joi":"^6.4.1",
+      "good":"latest",
+      "good-console":"latest",
+      "hapi": "latest",
+      "hapi-swaggered": "latest",
+      "hapi-swaggered-ui": "latest",
+      "hoek": "latest",
+      "joi": "latest",
       "lodash.clonedeep":"^2.4.1",
       "nconf":"latest",
       "request":"*",
@@ -49,7 +50,9 @@
       "winston":"latest",
       "xml2js": "latest",
       "strings.js": "latest",
-      "strformat": "latest"
+      "strformat": "latest",
+      "vision": "latest",
+      "inert": "latest"
    },
    "devDependencies":{
 
