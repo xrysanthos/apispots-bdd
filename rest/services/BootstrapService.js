@@ -5,15 +5,10 @@
  */
 
 var log = require('winston');
-var fs = require('fs');
-var async = require("async");
 var nconf = require('nconf');
 var Hapi = require('hapi');
-var Path = require('path');
-var Good = require('good');
-var Joi = require('joi');
-var Inert = require("inert");
-var Vision = require("vision");
+var Inert = require('inert');
+var Vision = require('vision');
 var hapiSwaggered = require('hapi-swaggered');
 var hapiSwaggeredUi = require('hapi-swaggered-ui');
 
@@ -21,9 +16,6 @@ module.exports = function() {
 
   // is the environment initialized?
   var _initialized = false;
-
-  // Array to hold async tasks
-  var _asyncTasks = [];
 
   // the server instance
   var _server = null;
@@ -39,7 +31,10 @@ module.exports = function() {
     log.info('Initializing logging framework...');
 
     // Console transport
-    if ((nconf.get()) && (typeof nconf.get().logging != 'undefined') && (typeof nconf.get().logging.console != 'undefined') && (typeof nconf.get().logging.console.level != 'undefined')) {
+    if ((nconf.get()) &&
+      (typeof nconf.get().logging !== 'undefined') &&
+      (typeof nconf.get().logging.console !== 'undefined') &&
+      (typeof nconf.get().logging.console.level !== 'undefined')) {
 
       // log.transports.Console.level = nconf.get().logging.console.level;
       log.remove(log.transports.Console);
@@ -49,11 +44,13 @@ module.exports = function() {
         colorize: true
       });
 
-      log.info('|_ Added Console transport [Level: ' + nconf.get().logging.console.level + ']');
+      log.info('|_ Added Console transport [Level: ' +
+        nconf.get().logging.console.level + ']');
     }
 
-    if (callback)
+    if (callback) {
       callback();
+    }
   }
 
   /**
@@ -73,7 +70,7 @@ module.exports = function() {
        * and Swagger plugin
        */
       _server.connection({
-				port: 3000,
+        port: 3000,
         labels: ['api'],
         routes: {
           cors: false
@@ -114,8 +111,7 @@ module.exports = function() {
       _server.register([
         Inert,
         Vision,
-        /* register other plugins including hapi-swaggered and hapi-swaggered-ui */
-      ], function(err) {})
+      ]);
 
       _server.register({
         register: hapiSwaggered,
@@ -127,7 +123,7 @@ module.exports = function() {
         }
       }, function(err) {
         if (err) {
-          throw err
+          throw err;
         }
       });
 
@@ -146,7 +142,7 @@ module.exports = function() {
         }
       }, function(err) {
         if (err) {
-          throw err
+          throw err;
         }
       });
 
@@ -158,7 +154,7 @@ module.exports = function() {
   /**
    * Sets up the server plugins
    */
-  function _setupRouting(callback) {
+  function _setupRouting() {
 
     try {
 
@@ -179,8 +175,9 @@ module.exports = function() {
      */
     setup: function(callback) {
 
-      if (_initialized)
+      if (_initialized) {
         return;
+      }
 
       log.info('==========================================');
       log.info('Setting up contexts...');
@@ -209,8 +206,9 @@ module.exports = function() {
         _initialized = true;
 
         // notify listeners
-        if (callback)
+        if (callback) {
           callback();
+        }
       });
 
     }
