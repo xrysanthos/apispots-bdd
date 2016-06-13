@@ -38,7 +38,7 @@ module.exports = function() {
        * any specific tags to be executed?
        */
       if (typeof tags !== 'undefined') {
-        options.tags = tags;
+        options.tags = tags.split(',');
       }
 
       var args = [file];
